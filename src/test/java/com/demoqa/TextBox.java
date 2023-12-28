@@ -1,11 +1,12 @@
 package com.demoqa;
 
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
+
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -18,9 +19,11 @@ public class TextBox {
     }
     @Test
     void testBox(){
+        String UserName = "Samuseu Vlad";
+
         open("/text-box");
 
-        $("#userName").setValue("Samuseu Vlad");
+        $("#userName").setValue(UserName);
         $("#userEmail").setValue("qa@gmail.com");
         $("#currentAddress").setValue("currentAddress");
         $("#permanentAddress").setValue("permanentAddress");

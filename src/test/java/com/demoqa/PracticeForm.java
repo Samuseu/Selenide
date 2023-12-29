@@ -28,32 +28,37 @@ public class PracticeForm {
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
         executeJavaScript("$('#fixedban').remove()"); //удаление рекламы с помощью вызова джава скрипта.(в девтулах)
-        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('footer').remove()"); // удаление рекламы
 
         $("#firstName").setValue(userName);
         $("#lastName").setValue(userLastName);
         $("#userEmail").setValue(userEmail);
-        //Point
+
+        //Radio button
 //        $("label[for=gender-radio-1]").click();// хороший вариант можно просто [for=gender-radio-1]
 //        $("#gender-radio-1").parent().click(); //good
         $("#genterWrapper").$(byText("Male")).click();
 //        $(byText("Male")).click(); // not very good ищет первый элемент
+
         //Number
         $("#userNumber").setValue("3733333333");
-        //Data
+
+        //Data calendar
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("July");
 //        $(".react-datepicker__month-select").selectOptionByValue("5");
         $(".react-datepicker__year-select").selectOption("2009");
         $(".react-datepicker__day--030:not(react-datepicker__day--outside-month)").click();
+
         //checkbox
         $("#subjectsInput").setValue("Maths").pressEnter();
 
+        //Radio button
         $("#hobbiesWrapper").$(byText("Sports")).click();
 
         //Picture
-//        $("").uploadFile(new File("src/test/resources/img/1.png")); // или так ниже сокращение говорится что файл уже лежит в папке ресурс
-        $("#uploadPicture").uploadFromClasspath("img/1.png");
+//        $("").uploadFile(new File("src/test/resources/img/1.png"));
+        $("#uploadPicture").uploadFromClasspath("img/1.png");// или так сокращение говорится что файл уже лежит в папке ресурс
 
         $("#currentAddress").setValue("Current Address");
 
@@ -67,7 +72,7 @@ public class PracticeForm {
 
         $(".modal-dialog").shouldHave(appear);
         $(".modal-content").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(userName),text(userLastName),text(userEmail),text("3733333333"));
-
+        $(".table-responsive").shouldHave(text(userName), text(userLastName), text(userEmail), text("3733333333"));
+//        sleep(2000);
     }
 }

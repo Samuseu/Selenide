@@ -1,16 +1,16 @@
-package com.demoqa;
+package com.demoqa.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.appear;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class PracticeForm {
+public class RegistrationTests {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
@@ -27,8 +27,8 @@ public class PracticeForm {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
-        executeJavaScript("$('#fixedban').remove()"); //удаление рекламы с помощью вызова джава скрипта.(в девтулах)
-        executeJavaScript("$('footer').remove()"); // удаление рекламы
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         $("#firstName").setValue(userName);
         $("#lastName").setValue(userLastName);

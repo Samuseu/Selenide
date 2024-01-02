@@ -15,6 +15,7 @@ public class RegistrationTests extends TestBase {
         String userCurrentAdress = "city Polatsk";
         String userState = "NCR";
         String userCity = "Delhi";
+
         registrationPage.openPage()
                 .setFirstName(userName)
                 .setLastName(userLastName)

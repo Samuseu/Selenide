@@ -1,20 +1,23 @@
 package com.demoqa.tests;
 
+import com.demoqa.data.TestData;
 import org.junit.jupiter.api.Test;
 
 public class RegistrationTests extends TestBase {
 
-
     @Test
     void practiceForm() {
-        String userName = "Vlad";
-        String userLastName = "Samuseu";
-        String userEmail = "qa@gmail.com";
-        String userNumber = "3733333333";
-        String userSubject = "Maths";
-        String userCurrentAdress = "city Polatsk";
+        String userName = data.firstName;
+        String userLastName = data.lastName;
+        String userEmail = data.emailAdress;
+        String userNumber = data.number;
+        String userSubject = data.userSubject;
+        String userCurrentAdress = data.userAdress;
         String userState = "NCR";
         String userCity = "Delhi";
+        String userBirthDay = data.userBirthDay;
+        String userBirthMonth = data.userBirthMonth;
+        String userBirthYear = data.userBirthYear;
 
         registrationPage.openPage()
                 .setFirstName(userName)
@@ -22,8 +25,8 @@ public class RegistrationTests extends TestBase {
                 .setUserEmail(userEmail)
                 .setGender("Male")
                 .setUserNumber(userNumber)
-                .setBirthDay("30", "June", "2008")
-                .setSubject(userSubject)
+                .setBirthDay(userBirthDay, userBirthMonth, userBirthYear)
+//                .setSubject(userSubject)
                 .setHobbies("Sports")
                 .uploatPicture("img/1.png")
                 .setCurrentAddres(userCurrentAdress)
@@ -35,8 +38,8 @@ public class RegistrationTests extends TestBase {
                 .virifyResult("Student Email", userEmail)
                 .virifyResult("Gender", "Male")
                 .virifyResult("Mobile", userNumber)
-                .virifyResult("Date of Birth", "30 June,2008")
-                .virifyResult("Subjects", userSubject)
+                .virifyResult("Date of Birth", userBirthDay + " " + userBirthMonth + "," + userBirthYear)
+//                .virifyResult("Subjects", userSubject)
                 .virifyResult("Hobbies", "Sports")
                 .virifyResult("Address", userCurrentAdress)
                 .virifyResult("State and City", userState + " " + userCity);

@@ -3,6 +3,7 @@ package com.demoqa.pages;
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponents;
 import com.demoqa.pages.components.RegistrationResultsModal;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -71,7 +72,8 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setSubject(String values) {
-        userSubjectInput.setValue(values).pressEnter();
+        userSubjectInput.setValue(values);
+
 
         return this;
     }

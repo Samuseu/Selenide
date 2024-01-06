@@ -16,6 +16,7 @@ dependencies { // подключение зависимостей
     implementation 'org.seleniumhq.selenium:selenium-java:4.16.1'//  добавление библиотек Selenium WebDriver
     implementation 'com.codeborne:selenide:7.0.4' // Selenide = concise API for Selenium WebDriver
     implementation 'org.junit.jupiter:junit-jupiter:5.10.1'// Module "junit-jupiter" of JUnit 5.
+    implementation 'com.github.javafaker:javafaker:1.0.2' // faker
 }
 
 test { // говорим что будем использовать JUnit

@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.demoqa.tests;
 
 
 import com.codeborne.selenide.Configuration;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class TextBox {
+public class TextBoxTests {
     @BeforeAll
     static void beforeAll() {
         Configuration.holdBrowserOpen = false;
